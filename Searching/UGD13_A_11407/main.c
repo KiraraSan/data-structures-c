@@ -14,28 +14,40 @@ int main(int argc, char *argv[]) {
 	// 					  'U', 'V', 'W', 'X', 'Y',
 	// 					  'Z'};
 
-	static const char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	const size_t alphabet_count = sizeof(alphabet) - 1;
-	size_t i, j;
-	char random_alpha;
-	int index;
+	// static const char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	// const size_t alphabet_count = sizeof(alphabet) - 1;
+	// size_t a, j;
+	// char random_alpha;
+	// int index;
 
     createEmpty(V);
 	
 	do {
 		system("cls");
 		
+		char randomAlphabet = ' ';
+		int counter = 0, randomNumber = 0;
 		srand(time(NULL));
 
-		for (i=0; i<10; i++) {
-			for (j=0; j<alphabet_count; j++) {
-				random_alpha;
-				index = (double)rand() / RAND_MAX * alphabet_count;
-				random_alpha = alphabet[index];
+		for (counter = 0; counter < 10; counter++) {
+			randomNumber = 26 * (rand() / (RAND_MAX + 1.0));
 
-				printf("\n\tKarakter Random : %c ", random_alpha);
-			}
+			randomNumber += 65;
+			randomAlphabet = (char) randomNumber;
+
+			printf("\n\tKarakter Random : %c ", randomAlphabet);
 		}
+		// srand(time(NULL));
+
+		// for (a=0; a<10; a++) {
+		// 	for (j=0; j<alphabet_count; j++) {
+		// 		random_alpha;
+		// 		index = (double)rand() / RAND_MAX * alphabet_count;
+		// 		random_alpha = alphabet[index];
+
+		// 		printf("\n\tKarakter Random %g : %c ", j, random_alpha);
+		// 	}
+		// }
 
 		printf("\n\t\t--- UNGUIDED SEARCHING ---\n");
 		// printf("\n\tKarakter Random : %c ", random);
