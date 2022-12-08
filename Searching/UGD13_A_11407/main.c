@@ -1,10 +1,10 @@
 #include "header.h"
 
 int main(int argc, char *argv[]) {
-	arrayType array, sortArray;
+	// arrayType array, sortArray;
 	Video V[N];
 	string judul, random;
-    int menu, i, n = 1, c, temp, view, check, num;
+    int menu, i, n = 1, c, j, temp, view, check, num;
     int find, found;
 
 	// char character[26] = {'A', 'B', 'C', 'D', 'E',
@@ -65,27 +65,56 @@ int main(int argc, char *argv[]) {
 				break;
 				
 			case 2:
-				for (i=0; i<N; i++) {
-					printf("\n\tVideo [%d]", n);
-					printf("\n\tJudul   : "); fflush(stdin); gets(judul);
-					while (!uniqueCheckVideo(V, judul)) {
+				if (isFull(V) != -1) {
+					for (i=0; i<N; i++) {
+						printf("\n\tVideo [%d]", n);
 						printf("\n\tJudul   : "); fflush(stdin); gets(judul);
+						while (!uniqueCheckVideo(V, judul)) {
+							printf("\n\tJudul   : "); fflush(stdin); gets(judul);
+						}
+						strcpy(V[i].judul, judul);
+
+						// srand((unsigned) time(NULL));
+						// num = rand() % 1000 + 1;
+						// if (uniqueCheckView(V, num)) {
+						// 	// num = rand() % 1000 + 1;
+						// 	V[i].view = num;
+						// } else {
+						// 	i--;
+						// }
+						// num = rand() % 1000 + 1;
+
+						n++;
 					}
-					strcpy(V[i].judul, judul);
-					srand((unsigned) time(NULL));
-       	 			if (uniqueCheckView(V, view) != 0) {
-      	 				num = rand() % 1000 + 1;
-       	 				V[i].view = num;
-					}
-					n++;
+					insertRandomView(V);
+					// srand((unsigned) time(NULL));
+					// for (j=0; j<N; j++) {
+					// 	num = rand() % 1000 + 1;
+					// 	if (uniqueCheckView(V, view)) {
+					// 		// num = rand() % 1000 + 1;
+					// 		V[i].view = num;
+					// 	} else {
+					// 		j--;
+					// 	}
+					// }
+				} else {
+					printf("\n\t[!] Sudah input video");
 				}
 				break;
 				
 			case 3:
 				if (isEmpty(V) != -1) {
+					// insertRandomView(V);
 					bubbleSort(V);
-					for (i=0; i<N; i++) {
-						printf("\n\t| %s - %d |", V[i].judul, V[i].view);
+					printArray(V);
+
+					printf("\n\tCari video berdasarkan jumlah : "); scanf("%d", &find);
+					found = binarySearch(V, 0, N-1, find);
+
+					if (found != -1) {
+						printf("\n\tVideo [ %s ] ditemukan di index [ %d ]", V[found].judul, found);
+					} else {
+						printf("\n\t[!] Data tidak ditemukan");
 					}
 				} else {
 					printf("\n\tData is empty [!]");
@@ -93,6 +122,9 @@ int main(int argc, char *argv[]) {
 				break;
 				
 			case 4:
+				if (isEmpty(V) != -1) {
+					
+				}
 				break;
 			
 			case 5:
