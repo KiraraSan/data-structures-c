@@ -3,28 +3,43 @@
 int main(int argc, char *argv[]) {
 	arrayType array, sortArray;
 	Video V[N];
-	string judul;
+	string judul, random;
     int menu, i, n = 1, c, temp, view, check, num;
     int find, found;
 
-	char character[26] = {'A', 'B', 'C', 'D', 'E',
-						  'F', 'G', 'H', 'I', 'J',
-						  'K', 'L', 'M', 'N', 'O',
-						  'P', 'Q', 'R', 'S', 'T',
-						  'U', 'V', 'W', 'X', 'Y',
-						  'Z'};
-	
+	// char character[26] = {'A', 'B', 'C', 'D', 'E',
+	// 					  'F', 'G', 'H', 'I', 'J',
+	// 					  'K', 'L', 'M', 'N', 'O',
+	// 					  'P', 'Q', 'R', 'S', 'T',
+	// 					  'U', 'V', 'W', 'X', 'Y',
+	// 					  'Z'};
+
+	static const char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	const size_t alphabet_count = sizeof(alphabet) - 1;
+	size_t i, j;
+	char random_alpha;
+	int index;
+
     createEmpty(V);
 	
 	do {
 		system("cls");
-		string random = "";
-		for (c=0; c<10; c++) {
-//			random += character[rand() % ];
+		
+		srand(time(NULL));
+
+		for (i=0; i<10; i++) {
+			for (j=0; j<alphabet_count; j++) {
+				random_alpha;
+				index = (double)rand() / RAND_MAX * alphabet_count;
+				random_alpha = alphabet[index];
+
+				printf("\n\tKarakter Random : %c ", random_alpha);
+			}
 		}
+
 		printf("\n\t\t--- UNGUIDED SEARCHING ---\n");
-		printf("\n\tKarakter Random : %c \n", random);
-		printf("\n\t[1] Cari Karakter");
+		// printf("\n\tKarakter Random : %c ", random);
+		printf("\n\n\t[1] Cari Karakter");
 		printf("\n\t[2] Input Video");
 		printf("\n\t[3] Cari Jumlah Video");
 		printf("\n\t[4] Edit Video");
