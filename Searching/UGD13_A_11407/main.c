@@ -85,6 +85,21 @@ int main(int argc, char *argv[]) {
 				break;
 			
 			case 5:
+				if (isEmpty(V) != -1) {
+					bubbleSort(V);
+					printArray(V);
+
+					printf("\n\n\tCari video berdasarkan nama/judul : "); fflush(stdin); gets(judul);
+					found = binarySearch(V, 0, N-1, judul);
+
+					if (found != -1) {
+						printf("\n\t\tVideo [ %s ] ditemukan di index [ %d ]", V[found].judul, found);
+					} else {
+						printf("\n\t\t[!] Data tidak ditemukan");
+					}
+				} else {
+					printf("\n\t\tData is empty [!]");
+				}
 				break;
 				
 			case 0:
