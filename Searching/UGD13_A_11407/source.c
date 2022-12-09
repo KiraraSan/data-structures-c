@@ -112,14 +112,6 @@ int uniqueCheckAplhabet(char randomAlphabet, char randomNumber) {
     return 1;
 }
 
-// void copyArray(arrayType a, arrayType b) {
-//     int i;
-
-//     for (i=0; i<N; i++) {
-//         b[i] = a[i];
-//     }
-// }
-
 void insertRandomView(Video V[]) {
     int num, i;
 
