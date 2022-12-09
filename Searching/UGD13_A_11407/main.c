@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
 	do {
 		system("cls");
 		
-		char randomAlphabet[] = ' ';
+		char randomAlphabet[10];
 		int counter = 0, randomNumber = 0;
 		srand(time(NULL));
 
@@ -25,8 +25,9 @@ int main(int argc, char *argv[]) {
 			// printf("\n\tKarakter Random : %c ", randomAlphabet);
 		}
 		printf("\n\t\t--- UNGUIDED SEARCHING ---\n");
+		printf("\n\tKarakter Random : ");
 		for (counter = 0; counter < 10; counter++) {
-			printf("\n\tKarakter Random : %c ", randomAlphabet[counter]);
+			printf("%c ", randomAlphabet[counter]);
 		}
 		// printf("\n\tKarakter Random : %c ", random);
 		printf("\n\n\t[1] Cari Karakter");

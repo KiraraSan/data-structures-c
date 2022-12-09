@@ -101,16 +101,16 @@ bool uniqueCheckView(Video V[], int view) {
     return true;
 }
 
-// int uniqueCheck(arrayType a, infoType input) {
-//     int i;
+int uniqueCheckAplhabet(char randomAlphabet, char randomNumber) {
+    int i;
 
-//     for (i=0; i<N; i++) {
-//         if(a[i] == input) {
-//             return 0;
-//         }
-//     }
-//     return 1;
-// }
+    for (i=0; i<10; i++) {
+        if (randomAlphabet[i] == randomNumber) {
+            return 0;
+        }
+    }
+    return 1;
+}
 
 // void copyArray(arrayType a, arrayType b) {
 //     int i;
