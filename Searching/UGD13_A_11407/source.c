@@ -113,7 +113,6 @@ int uniqueCheckAplhabet(char randomAlphabet[], char randomNumber) {
 }
 
 void insertRandomAlphabet(char randomAlphabet[]) {
-    // char randomAlphabet[10];
     char randAlpha[10], alpha;
 	int counter = 0, randomNumber = 0;
 	srand(time(NULL));
