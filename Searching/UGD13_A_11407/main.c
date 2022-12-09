@@ -24,18 +24,6 @@ int main(int argc, char *argv[]) {
 
 			// printf("\n\tKarakter Random : %c ", randomAlphabet);
 		}
-		// srand(time(NULL));
-
-		// for (a=0; a<10; a++) {
-		// 	for (j=0; j<alphabet_count; j++) {
-		// 		random_alpha;
-		// 		index = (double)rand() / RAND_MAX * alphabet_count;
-		// 		random_alpha = alphabet[index];
-
-		// 		printf("\n\tKarakter Random %g : %c ", j, random_alpha);
-		// 	}
-		// }
-
 		printf("\n\t\t--- UNGUIDED SEARCHING ---\n");
 		for (counter = 0; counter < 10; counter++) {
 			printf("\n\tKarakter Random : %c ", randomAlphabet[counter]);
