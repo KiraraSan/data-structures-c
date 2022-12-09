@@ -7,27 +7,29 @@ int main(int argc, char *argv[]) {
     int menu, i, n = 1, c, j, temp, view, check, num;
     int find, found;
 
+	char randomAlphabet[10];
     createEmpty(V);
 	
 	do {
 		system("cls");
 		
-		char randomAlphabet[10];
-		int counter = 0, randomNumber = 0;
-		srand(time(NULL));
+		// char randomAlphabet[10];
+		// int counter = 0, randomNumber = 0;
+		// srand(time(NULL));
 
-		for (counter = 0; counter < 10; counter++) {
-			randomNumber = 26 * (rand() / (RAND_MAX + 1.0));
+		// for (counter = 0; counter < 10; counter++) {
+		// 	randomNumber = 26 * (rand() / (RAND_MAX + 1.0));
 
-			randomNumber += 65;
-			randomAlphabet[counter] = (char) randomNumber;
+		// 	randomNumber += 65;
+		// 	randomAlphabet[counter] = (char) randomNumber;
 
-			// printf("\n\tKarakter Random : %c ", randomAlphabet);
-		}
+		// 	// printf("\n\tKarakter Random : %c ", randomAlphabet);
+		// }
 		printf("\n\t\t--- UNGUIDED SEARCHING ---\n");
+		insertRandomAlphabet(randomAlphabet);
 		printf("\n\tKarakter Random : ");
-		for (counter = 0; counter < 10; counter++) {
-			printf("%c ", randomAlphabet[counter]);
+		for (i = 0; i < 10; i++) {
+			printf("%c ", randomAlphabet[i]);
 		}
 		// printf("\n\tKarakter Random : %c ", random);
 		printf("\n\n\t[1] Cari Karakter");

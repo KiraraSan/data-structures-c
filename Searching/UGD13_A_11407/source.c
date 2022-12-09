@@ -101,7 +101,7 @@ bool uniqueCheckView(Video V[], int view) {
     return true;
 }
 
-int uniqueCheckAplhabet(char randomAlphabet, char randomNumber) {
+int uniqueCheckAplhabet(char randomAlphabet[], char randomNumber) {
     int i;
 
     for (i=0; i<10; i++) {
@@ -110,6 +110,26 @@ int uniqueCheckAplhabet(char randomAlphabet, char randomNumber) {
         }
     }
     return 1;
+}
+
+void insertRandomAlphabet(char randomAlphabet[]) {
+    // char randomAlphabet[10];
+    char randAlpha[10], alpha;
+	int counter = 0, randomNumber = 0;
+	srand(time(NULL));
+
+	for (counter = 0; counter < 10; counter++) {
+		randomNumber = 26 * (rand() / (RAND_MAX + 1.0));
+
+		randomNumber += 65;
+		alpha = (char) randomNumber;
+
+        if (uniqueCheckAplhabet(randomAlphabet, alpha)) {
+            randomAlphabet[counter] = alpha;
+        } else {
+            counter--;
+        }
+	}
 }
 
 void insertRandomView(Video V[]) {
