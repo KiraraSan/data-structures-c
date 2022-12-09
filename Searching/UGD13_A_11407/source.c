@@ -22,14 +22,6 @@ int isEmpty(Video V[]) {
 	return -1;
 }
 
-//int isEmpty(arrayType a) {
-//    return (a[0] == 0);
-//}
-//
-//int isFull(arrayType a) {
-//    return (a[N-1] != 0);
-//}
-
 void createEmpty(Video V[]) {
     int i;
 
@@ -38,13 +30,6 @@ void createEmpty(Video V[]) {
     	V[i].view = 0;
     }
 }
-
-// void swapElement(keyType *first, keyType *second) {
-//     keyType temp;
-//     temp = (*first);
-//     (*first) = (*second);
-//     (*second) = temp;
-// }
 
 void bubbleSort(Video V[]) {
     Video v;
@@ -94,14 +79,6 @@ void printArray(Video V[]) {
 	}
 }
 
-// void printArray(arrayType a) {
-//     int i;
-
-//     for (i=0; i<N; i++) {
-//         printf("%d ", a[i]);
-//     }
-// }
-
 bool uniqueCheckVideo(Video V[], string judul) {
     int i;
 
@@ -146,15 +123,7 @@ bool uniqueCheckView(Video V[], int view) {
 void insertRandomView(Video V[]) {
     int num, i;
 
-//     srand((unsigned) time(NULL));
     for (i=0; i<N; i++) {
-//         num = rand() % 1000 + 1;
-//         if (uniqueCheckVideo(V, num)) {
-//             (V)[i].view = num;
-//         } else {
-//             i--;
-//         }
-//    }
     srand((unsigned) time(NULL));
 	num = rand() % 1000 + 1;
 	if (uniqueCheckView(V, num)) {
@@ -165,17 +134,3 @@ void insertRandomView(Video V[]) {
 	}
     }
 }
-
-// void insertRandom(arrayType a) {
-//     int i, num;
-
-//     srand((unsigned) time(NULL));
-//     for (i=0; i<N; i++) {
-//         num = rand() % 1000 + 1;
-//         if (uniqueCheck(a, num)) {
-//             (a)[i] = num;
-//         } else {
-//             i--;
-//         }
-//     }
-// }

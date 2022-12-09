@@ -73,30 +73,9 @@ int main(int argc, char *argv[]) {
 							printf("\n\tJudul   : "); fflush(stdin); gets(judul);
 						}
 						strcpy(V[i].judul, judul);
-
-						// srand((unsigned) time(NULL));
-						// num = rand() % 1000 + 1;
-						// if (uniqueCheckView(V, num)) {
-						// 	// num = rand() % 1000 + 1;
-						// 	V[i].view = num;
-						// } else {
-						// 	i--;
-						// }
-						// num = rand() % 1000 + 1;
-
 						n++;
 					}
 					insertRandomView(V);
-					// srand((unsigned) time(NULL));
-					// for (j=0; j<N; j++) {
-					// 	num = rand() % 1000 + 1;
-					// 	if (uniqueCheckView(V, view)) {
-					// 		// num = rand() % 1000 + 1;
-					// 		V[i].view = num;
-					// 	} else {
-					// 		j--;
-					// 	}
-					// }
 				} else {
 					printf("\n\t[!] Sudah input video");
 				}
@@ -104,7 +83,6 @@ int main(int argc, char *argv[]) {
 				
 			case 3:
 				if (isEmpty(V) != -1) {
-					// insertRandomView(V);
 					bubbleSort(V);
 					printArray(V);
 
