@@ -7,25 +7,12 @@ int main(int argc, char *argv[]) {
     int menu, i, n = 1, c, j, temp, view, check, num;
     int find, found;
 
-	// char character[26] = {'A', 'B', 'C', 'D', 'E',
-	// 					  'F', 'G', 'H', 'I', 'J',
-	// 					  'K', 'L', 'M', 'N', 'O',
-	// 					  'P', 'Q', 'R', 'S', 'T',
-	// 					  'U', 'V', 'W', 'X', 'Y',
-	// 					  'Z'};
-
-	// static const char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	// const size_t alphabet_count = sizeof(alphabet) - 1;
-	// size_t a, j;
-	// char random_alpha;
-	// int index;
-
     createEmpty(V);
 	
 	do {
 		system("cls");
 		
-		char randomAlphabet = ' ';
+		char randomAlphabet[] = ' ';
 		int counter = 0, randomNumber = 0;
 		srand(time(NULL));
 
@@ -33,9 +20,9 @@ int main(int argc, char *argv[]) {
 			randomNumber = 26 * (rand() / (RAND_MAX + 1.0));
 
 			randomNumber += 65;
-			randomAlphabet = (char) randomNumber;
+			randomAlphabet[counter] = (char) randomNumber;
 
-			printf("\n\tKarakter Random : %c ", randomAlphabet);
+			// printf("\n\tKarakter Random : %c ", randomAlphabet);
 		}
 		// srand(time(NULL));
 
@@ -50,6 +37,9 @@ int main(int argc, char *argv[]) {
 		// }
 
 		printf("\n\t\t--- UNGUIDED SEARCHING ---\n");
+		for (counter = 0; counter < 10; counter++) {
+			printf("\n\tKarakter Random : %c ", randomAlphabet[counter]);
+		}
 		// printf("\n\tKarakter Random : %c ", random);
 		printf("\n\n\t[1] Cari Karakter");
 		printf("\n\t[2] Input Video");
