@@ -52,7 +52,7 @@ void bubbleSortJudul(Video V[]) {
 
     for (i=0; i<N; i++) {
         for (j=i+1; j<N; j++) {
-            if (strcmpi((V)[i].judul > (V)[j].judul)) {
+            if (strcmpi((V)[i].judul > (V)[j].judul) < 0) {
                 v = V[i];
                 V[i] = V[j];
                 V[j] = v;
@@ -81,7 +81,7 @@ int binarySearchJudul(Video V[], int left, int right, string judul) {
         if (strcmpi(judul, V[mid].judul) == 0) {
             return mid;
         }
-        if (strlen(judul < V[mid].judul)) {
+        if (strcmpi(judul, V[mid].judul) < 0) {
             return binarySearch(V, left, mid-1, judul);
         }
         return binarySearch(V, mid+1, right, judul);
