@@ -89,16 +89,16 @@ int binarySearchJudul(Video V[], int left, int right, string judul) {
     return -1;
 }
 
-// int sequentialSearch(arrayType a, infoType find) {
-//     int i;
+int sequentialSearch(char randomAlphabet[], char cari) {
+    int i;
     
-//     for (i=0; i<N; i++) {
-//         if(a[i] == find) {
-//             return i;
-//         }
-//     }
-//     return -1;
-// }
+    for (i=0; i<10; i++) {
+        if (randomAlphabet[i] == cari) {
+            return i;
+        }
+    }
+    return -1;
+}
 
 void printArray(Video V[]) {
     int i;

@@ -24,7 +24,7 @@ void bubbleSort(Video V[]);
 
 int binarySearch(Video V[], int left, int right, int find);
 int binarySearchJudul(Video V[], int left, int right, string judul);
-// int sequentialSearch(arrayType a, infoType find);
+int sequentialSearch(char randomAlphabet[], char cari);
 
 void printArray(Video V[]);
 // void printArray(arrayType a);

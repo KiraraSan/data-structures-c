@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
     int menu, i, n = 1, c, j, temp, view, check, num;
     int find, found = -1;
 
-	char randomAlphabet[10];
+	char randomAlphabet[10], cari;
     createEmpty(V);
 	
 	do {
@@ -27,7 +27,14 @@ int main(int argc, char *argv[]) {
 		
 		switch (menu) {
 			case 1:
+				printf("\n\tCari karakter : "); scanf("%c ", &cari);
 				
+				found = sequentialSearch(randomAlphabet, cari);
+				if (found != -1) {
+					printf("\n\t\tKarakter [ %c ] ditemukan di index [ %d ]", cari, found);
+				} else {
+					printf("\n\t\t[!] Karakter tidak ditemukan");
+				}
 				break;
 				
 			case 2:
@@ -86,11 +93,11 @@ int main(int argc, char *argv[]) {
 			
 			case 5:
 				if (isEmpty(V) != -1) {
-					bubbleSort(V);
+					bubbleSortJudul(V);
 					printArray(V);
 
 					printf("\n\n\tCari video berdasarkan nama/judul : "); fflush(stdin); gets(judul);
-					found = binarySearch(V, 0, N-1, judul);
+					found = binarySearchJudul(V, 0, N-1, judul);
 
 					if (found != -1) {
 						printf("\n\t\tVideo [ %s ] ditemukan di index [ %d ]", V[found].judul, found);
