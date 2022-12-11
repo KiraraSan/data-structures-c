@@ -3,7 +3,7 @@
 int main(int argc, char *argv[]) {
 	Video V[N];
 	string judul, random;
-    int menu, i, n = 1, c, j, temp, view, check, num;
+    int menu, i, n = 1, temp, view, check, num;
     int find, found = -1;
 
 	char randomAlphabet[10], cari;

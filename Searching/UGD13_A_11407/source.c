@@ -141,51 +141,46 @@ int uniqueCheckAplhabet(char randomAlphabet[], char randomNumber) {
     return 1;
 }
 
-void insertRandomAlphabet(char randomAlphabet[]) {
-    char randAlpha[10], alpha;
-	int counter = 0, randomNumber = 0;
-	srand(time(NULL));
-
-	for (counter = 0; counter < 10; counter++) {
-		randomNumber = 26 * (rand() / (RAND_MAX + 1.0));
-
-		randomNumber += 65;
-		alpha = (char) randomNumber;
-
-        if (uniqueCheckAplhabet(randomAlphabet, alpha)) {
-            randomAlphabet[counter] = alpha;
-        } else {
-            counter--;
-        }
-	}
-}
-
 // void insertRandomAlphabet(char randomAlphabet[]) {
-//     char alphabet[] = {'A', 'B', 'C', 'D', 'E',
-// 					   'F', 'G', 'H', 'I', 'J',
-// 					   'K', 'L', 'M', 'N', 'O',
-// 					   'P', 'Q', 'R', 'S', 'T',
-// 					   'U', 'V', 'W', 'X', 'Y',
-// 					   'Z'};
-//     char alpha;
+//     char randAlpha[10], alpha;
 // 	int counter = 0, randomNumber = 0;
 // 	srand(time(NULL));
 
 // 	for (counter = 0; counter < 10; counter++) {
-// 		// randomNumber = 26 * (rand() / (RAND_MAX + 1.0));
+// 		randomNumber = 26 * (rand() / (RAND_MAX + 1.0));
 
-// 		// randomNumber += 65;
-// 		// alpha = (char) randomNumber;
+// 		randomNumber += 65;
+// 		alpha = (char) randomNumber;
 
-//         alpha = alphabet[rand() % 26];
-
-//         if (alpha != 'A' || alpha != 'I' || alpha != 'U' || alpha != 'E' || alpha != 'O' || uniqueCheckAplhabet(randomAlphabet, alpha)) {
+//         if (uniqueCheckAplhabet(randomAlphabet, alpha)) {
 //             randomAlphabet[counter] = alpha;
 //         } else {
 //             counter--;
 //         }
 // 	}
 // }
+
+void insertRandomAlphabet(char randomAlphabet[]) {
+    char alphabet[] = {'A', 'B', 'C', 'D', 'E',
+					   'F', 'G', 'H', 'I', 'J',
+					   'K', 'L', 'M', 'N', 'O',
+					   'P', 'Q', 'R', 'S', 'T',
+					   'U', 'V', 'W', 'X', 'Y',
+					   'Z'};
+    char alpha;
+	int counter = 0, randomNumber = 0;
+	srand(time(NULL));
+
+	for (counter = 0; counter < 10; counter++) {
+        alpha = alphabet[rand() % 26];
+
+        if (alpha != 'A' || alpha != 'I' || alpha != 'U' || alpha != 'E' || alpha != 'O' || uniqueCheckAplhabet(randomAlphabet, alpha)) {
+            randomAlphabet[counter] = alpha;
+        } else {
+            counter--;
+        }
+	}
+}
 
 void insertRandomView(Video V[]) {
     int num, i;
