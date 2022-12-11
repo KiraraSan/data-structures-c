@@ -52,7 +52,7 @@ void bubbleSortJudul(Video V[]) {
 
     for (i=0; i<N; i++) {
         for (j=i+1; j<N; j++) {
-            if (strcmpi((V)[i].judul > (V)[j].judul) < 0) {
+            if (strcmpi((V)[i].judul, (V)[j].judul) > 0) {
                 v = V[i];
                 V[i] = V[j];
                 V[j] = v;
@@ -75,16 +75,16 @@ int binarySearch(Video V[], int left, int right, int find) {
     return -1;
 }
 
-int binarySearchJudul(Video V[], int left, int right, string judul) {
+int binarySearchJudul(Video V[], int left, int right, string carijd) {
     if (right >= left) {
         int mid = (left + right)/2;
-        if (strcmpi(V[mid].judul, judul) == 0) {
+        if (strcmp(carijd, V[mid].judul) == 0) {
             return mid;
         }
-        if (strcmpi(V[mid].judul, judul) < 0) {
-            return binarySearch(V, left, mid-1, judul);
+        if (strcmp(carijd, V[mid].judul) < 0) {
+            return binarySearchJudul(V, left, mid-1, carijd);
         }
-        return binarySearch(V, mid+1, right, judul);
+        return binarySearchJudul(V, mid+1, right, carijd);
     }
     return -1;
 }
@@ -186,7 +186,6 @@ void insertRandomView(Video V[]) {
     int num, i;
 
     for (i=0; i<N; i++) {
-        srand((unsigned) time(NULL));
         num = rand() % 1000 + 1;
         if (uniqueCheckView(V, num)) {
             V[i].view = num;

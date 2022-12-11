@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[]) {
 	Video V[N];
-	string judul, random;
+	string judul, random, carijd;
     int menu, i, n = 1, temp, view, check, num;
     int find, found = -1;
 
@@ -47,7 +47,6 @@ int main(int argc, char *argv[]) {
 						}
 						n++;
 					}
-					printf("\n\t\t[*] Please Wait [*]");
 					insertRandomView(V);
 					printf("\n\t\tBerhasil input video...");
 				} else {
@@ -94,11 +93,11 @@ int main(int argc, char *argv[]) {
 					bubbleSortJudul(V);
 					printArray(V);
 
-					printf("\n\n\tCari video berdasarkan nama/judul : "); fflush(stdin); gets(judul);
-					found = binarySearchJudul(V, 0, N-1, judul);
+					printf("\n\n\tCari video berdasarkan nama/judul : "); fflush(stdin); gets(carijd);
+					found = binarySearchJudul(V, 0, N-1, carijd);
 
 					if (found != -1) {
-						printf("\n\t\tVideo [ %s ] ditemukan di index [ %d ]", V[found].judul, found);
+						printf("\n\t\tVideo [ %s ] ditemukan di index [ %d ]", carijd, found);
 					} else {
 						printf("\n\t\t[!] Data tidak ditemukan");
 					}

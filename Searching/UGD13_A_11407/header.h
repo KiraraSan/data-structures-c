@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
+#include <string.h>
 
 #define N 5
 
@@ -20,7 +21,7 @@ void bubbleSort(Video V[]);
 void bubbleSortJudul(Video V[]);
 
 int binarySearch(Video V[], int left, int right, int find);
-int binarySearchJudul(Video V[], int left, int right, string judul);
+int binarySearchJudul(Video V[], int left, int right, string carijd);
 int sequentialSearch(char randomAlphabet[], char cari);
 
 void printArray(Video V[]);
