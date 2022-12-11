@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
 		
 		switch (menu) {
 			case 1:
-				printf("\n\tCari karakter : "); scanf("%c ", &cari);
+				printf("\n\tCari karakter : "); scanf(" %c", &cari);
 				
 				found = sequentialSearch(randomAlphabet, cari);
 				if (found != -1) {
