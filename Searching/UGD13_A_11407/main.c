@@ -41,11 +41,10 @@ int main(int argc, char *argv[]) {
 				if (isFull(V) != -1) {
 					for (i=0; i<N; i++) {
 						printf("\n\tVideo [%d]", n);
-						printf("\n\tJudul   : "); fflush(stdin); gets(judul);
+						printf("\n\tJudul   : "); fflush(stdin); gets(V[i].judul);
 						while (!uniqueCheckVideo(V, judul)) {
-							printf("\n\tJudul   : "); fflush(stdin); gets(judul);
+							printf("\n\tJudul   : "); fflush(stdin); gets(V[i].judul);
 						}
-						strcpy(V[i].judul, judul);
 						n++;
 					}
 					printf("\n\t\t[*] Please Wait [*]");
@@ -78,11 +77,10 @@ int main(int argc, char *argv[]) {
 				if (isEmpty(V) != -1) {
 					if (found != -1) {
 						printf("\n\tEdit Video [ %s ] pada index [ %d ]\n", V[found].judul, found);
-						printf("\n\tJudul   : "); fflush(stdin); gets(judul);
+						printf("\n\tJudul   : "); fflush(stdin); gets(V[i].judul);
 						while (!uniqueCheckVideo(V, judul)) {
-							printf("\n\tJudul   : "); fflush(stdin); gets(judul);
+							printf("\n\tJudul   : "); fflush(stdin); gets(V[i].judul);
 						}
-						strcpy(V[found].judul, judul);
 						printf("\n\t\tBerhasil edit video...");
 					} else {
 						printf("\n\t\t[!] Data belum ditemukan");

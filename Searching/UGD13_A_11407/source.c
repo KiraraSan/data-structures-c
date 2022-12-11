@@ -78,10 +78,10 @@ int binarySearch(Video V[], int left, int right, int find) {
 int binarySearchJudul(Video V[], int left, int right, string judul) {
     if (right >= left) {
         int mid = (left + right)/2;
-        if (strcmpi(judul, V[mid].judul) == 0) {
+        if (strcmpi(V[mid].judul, judul) == 0) {
             return mid;
         }
-        if (strcmpi(judul, V[mid].judul) < 0) {
+        if (strcmpi(V[mid].judul, judul) < 0) {
             return binarySearch(V, left, mid-1, judul);
         }
         return binarySearch(V, mid+1, right, judul);
@@ -174,7 +174,7 @@ void insertRandomAlphabet(char randomAlphabet[]) {
 	for (counter = 0; counter < 10; counter++) {
         alpha = alphabet[rand() % 26];
 
-        if (alpha != 'A' || alpha != 'I' || alpha != 'U' || alpha != 'E' || alpha != 'O' || uniqueCheckAplhabet(randomAlphabet, alpha)) {
+        if (uniqueCheckAplhabet(randomAlphabet, alpha) && alpha != 'A' && alpha != 'I' && alpha != 'U' && alpha != 'E' && alpha != 'O') {
             randomAlphabet[counter] = alpha;
         } else {
             counter--;

@@ -17,6 +17,7 @@ int isFull(Video V[]);
 
 void createEmpty(Video V[]);
 void bubbleSort(Video V[]);
+void bubbleSortJudul(Video V[]);
 
 int binarySearch(Video V[], int left, int right, int find);
 int binarySearchJudul(Video V[], int left, int right, string judul);
