@@ -84,7 +84,6 @@ int main(int argc, char *argv[]) {
 					} else {
 						printf("\n\t\t[!] Data belum ditemukan");
 					}
-					
 				}
 				break;
 			
